@@ -49,7 +49,13 @@ public class HTTPResponse extends ResponseProxy {
 	}
 
 	public InputStream getInputStream() {
-		return body().byteStream();
+		return CloseCallbackInputStream.of(body().byteStream(), this::setBodySourceCloseImmediately);
+	}
+
+	private void setBodySourceCloseImmediately() {
+		body().source()
+			.timeout()
+			.deadlineNanoTime(0);
 	}
 
 	public byte[] bytes() {
