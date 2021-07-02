@@ -13,7 +13,7 @@ dependencies {
         exclude (module: "asm")
     }
     api (group: "org.json", name: "json", version:"20090211")
-    api (group: "dnsjava", name: "dnsjava", version:"3.2.2")
+    api (group: "dnsjava", name: "dnsjava", version:"3.4.0")
     api (group: "org.hamcrest", name: "hamcrest-all", version:"1.1")
     api (group: "org.ow2.asm", name: "asm", version: "9.0")
     api (group: "org.apache.httpcomponents.core5", name: "httpcore5-h2", version: "5.0.3")
